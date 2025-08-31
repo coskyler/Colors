@@ -1,4 +1,5 @@
 CREATE DATABASE IF NOT EXISTS color_app;
+
 USE color_app;
 
 CREATE TABLE IF NOT EXISTS Users (
@@ -16,7 +17,6 @@ CREATE TABLE IF NOT EXISTS Colors (
     r TINYINT UNSIGNED NOT NULL,
     g TINYINT UNSIGNED NOT NULL,
     b TINYINT UNSIGNED NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES Users(id) ON DELETE CASCADE
+    FOREIGN KEY (user_id) REFERENCES Users(id) ON DELETE CASCADE,
+    INDEX idx_user_name (user_id, name)
 );
-
-CREATE INDEX idx_colors_name ON Colors (name);
