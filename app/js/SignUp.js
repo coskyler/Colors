@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		if (text === "OK") {
 			errorEl.textContent = ""; // clear errors
-			// maybe redirect later
+			window.location.href = "/MyColors.php";
 		} else {
 			errorEl.textContent = text; // show error from PHP
 		}

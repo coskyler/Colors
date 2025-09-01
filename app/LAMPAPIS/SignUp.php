@@ -1,5 +1,6 @@
 <?php
 require_once('../db.php');
+require_once __DIR__ . '/../cookie.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     include $_SERVER['DOCUMENT_ROOT'] . "/html/SignUp.html";
@@ -55,7 +56,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         );
         $stmt->execute([':f'=>$first, ':l'=>$last, ':u'=>$user, ':p'=>$hash]);
 
-        echo "Success!";
+        $userId = $pdo->lastInsertId();
+        setAuthCookie($userId);
+        
+        echo "OK";
+
     } catch (Throwable $e) {
         error_log($e->getMessage());
         http_response_code(500);
