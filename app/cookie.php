@@ -16,6 +16,16 @@ function setAuthCookie(string $userId, int $ttl = 604800): void {
     ]);
 }
 
+function deleteAuthCookie(): void {
+    setcookie("auth", "", [
+        "expires"  => time() - 1,
+        "path"     => "/",
+        "httponly" => true,
+        "samesite" => "Strict",
+        "secure"   => true
+    ]);
+}
+
 function checkAuthCookie(): ?string {
     global $secret;
     if (empty($_COOKIE["auth"])) return null;
