@@ -1,7 +1,7 @@
 <?php
 $secret = getenv("COOKIE_SECRET");
 
-function setAuthCookie(string $userId, int $ttl = 3600): void {
+function setAuthCookie(string $userId, int $ttl = 604800): void {
     global $secret;
     $exp  = time() + $ttl;
     $data = $userId . "|" . $exp;
