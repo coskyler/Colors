@@ -135,7 +135,6 @@ button:active {
 	font-size: 0.95rem;
 	color: #cccccc;
 	text-align: center;
-	margin-top: 1em;
 	text-decoration: none;
 	transition: color 0.2s ease, text-decoration 0.2s ease;
 }
@@ -143,4 +142,14 @@ button:active {
 .noacc:hover {
 	color: #ffffff;
 	text-decoration: underline;
+}
+
+.error {
+	display: block;
+	font-size: 0.95rem;
+	color: #ff5757;
+	text-align: center;
+	text-decoration: none;
+	transition: color 0.2s ease, text-decoration 0.2s ease;
+    min-height: 1.2em;
 }

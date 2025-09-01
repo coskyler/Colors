@@ -6,6 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     <head>
         <title>Sign Up</title>
         <link rel="stylesheet" href="/css/Login.css">
+        <script src="/js/SignUp.js"></script>
     </head>
     <body>
         <div class="container">
@@ -30,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                     <input type="password" name="password" placeholder="Password" required>
                     <input type="password" name="verify_password" placeholder="Verify Password" required>
                     <button type="submit">Sign Up</button>
+                    <p class="error"> </p>
                     <a class="noacc" href="/LAMPAPIS/Login.php">
                         Already have an account? Log in
                     </a>
@@ -38,5 +40,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         </div>
     </body>
     </html>';
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $first  = trim($_POST['first_name'] ?? '');
+    $last   = trim($_POST['last_name'] ?? '');
+    $user   = trim($_POST['username'] ?? '');
+    $pass   = $_POST['password'] ?? '';
+    $verify = $_POST['verify_password'] ?? '';
+
+    // Check for empty fields
+    if ($first === '' || $last === '' || $user === '' || $pass === '' || $verify === '') {
+        echo "All fields are required";
+        exit;
+    }
+
+    // Check username length
+    if (strlen($user) < 3) {
+        echo "Username must be at least 3 characters";
+        exit;
+    }
+
+    // Check password length
+    if (strlen($pass) < 8) {
+        echo "Password must be at least 8 characters";
+        exit;
+    }
+
+    // Check password match
+    if ($pass !== $verify) {
+        echo "Passwords do not match";
+        exit;
+    }
+
+    // If valid, continue (for now just echo)
+    echo "OK";
 }
 ?>

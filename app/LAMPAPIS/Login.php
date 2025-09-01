@@ -27,10 +27,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                     <input type="text" name="username" placeholder="Username" required>
                     <input type="password" name="password" placeholder="Password" required>
                     <button type="submit">Log In</button>
+                    <p class="error"> </p>
                     <a class="noacc" href="/LAMPAPIS/SignUp.php">
                         Don\'t have an account? Sign up here
                     </a>
-
                 </form>
             </div>
         </div>
