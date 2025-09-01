@@ -1,10 +1,10 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    // Load the login page
+    // Load the sign up page
     echo '<!DOCTYPE html>
     <html>
     <head>
-        <title>Login</title>
+        <title>Sign Up</title>
         <link rel="stylesheet" href="/css/Login.css">
     </head>
     <body>
@@ -22,15 +22,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
             <!-- Right side -->
             <div class="right">
-                <form method="POST" action="/LAMPAPIS/Login.php" class="form">
-                    <h1>Log In</h1>
+                <form method="POST" action="/LAMPAPIS/SignUp.php" class="form">
+                    <h1>Sign Up</h1>
+                    <input type="text" name="first_name" placeholder="First Name" required>
+                    <input type="text" name="last_name" placeholder="Last Name" required>
                     <input type="text" name="username" placeholder="Username" required>
                     <input type="password" name="password" placeholder="Password" required>
-                    <button type="submit">Log In</button>
-                    <a class="noacc" href="/LAMPAPIS/SignUp.php">
-                        Don\'t have an account? Sign up here
+                    <input type="password" name="verify_password" placeholder="Verify Password" required>
+                    <button type="submit">Sign Up</button>
+                    <a class="noacc" href="/LAMPAPIS/Login.php">
+                        Already have an account? Log in
                     </a>
-
                 </form>
             </div>
         </div>
