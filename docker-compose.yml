@@ -2,9 +2,7 @@ services:
   web:
     build: ./docker/php
     ports:
-      - target: 80
-        published: ${WEB_PORT}
-        host_ip: ${HOST_IP}
+      - "${WEB_PORT}:80"
     volumes:
       - ./app:/var/www/html
     env_file:
