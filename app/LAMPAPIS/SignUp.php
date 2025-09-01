@@ -1,4 +1,6 @@
 <?php
+require_once('../db.php');
+
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     include $_SERVER['DOCUMENT_ROOT'] . "/html/SignUp.html";
 }
@@ -34,7 +36,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    // If valid, continue (for now just echo)
-    echo "OK";
+    try {
+        $pdo = db();
+
+        // Check if username exists
+        $stmt = $pdo->prepare("SELECT id FROM Users WHERE username = ?");
+        $stmt->execute([$user]);
+        if ($stmt->fetch()) {
+            echo "Username already exists";
+            exit;
+        }
+
+        // Insert new user
+        $hash = password_hash($pass, PASSWORD_DEFAULT);
+        $stmt = $pdo->prepare(
+            "INSERT INTO Users (first_name, last_name, username, password)
+             VALUES (:f, :l, :u, :p)"
+        );
+        $stmt->execute([':f'=>$first, ':l'=>$last, ':u'=>$user, ':p'=>$hash]);
+
+        echo "Success!";
+    } catch (Throwable $e) {
+        error_log($e->getMessage());
+        http_response_code(500);
+        echo $e->getMessage();
+    }
 }
 ?>
