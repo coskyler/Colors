@@ -1,0 +1,275 @@
+/* Layout */
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: sans-serif;
+}
+
+div {
+	display: flex;
+	height: 100%;
+}
+
+/* Sidebar */
+aside {
+	width: 215px;
+	background-image:
+		radial-gradient(circle at 10% 20%, rgba(255, 60, 60, 0.9) 0%, rgba(255, 60, 60, 0.1) 40%),
+		radial-gradient(circle at 95% 85%, rgba(80, 170, 255, 0.9) 0%, rgba(80, 170, 255, 0.1) 40%),
+		radial-gradient(circle at 42% 55%, rgba(60, 255, 150, 0.9) 0%, rgba(60, 255, 150, 0.1) 40%),
+		radial-gradient(circle at 50% 10%, rgba(255, 120, 200, 0.9) 0%, rgba(255, 120, 200, 0.1) 40%),
+		radial-gradient(circle at 78% 30%, rgba(190, 80, 255, 0.9) 0%, rgba(190, 80, 255, 0.1) 40%),
+		radial-gradient(circle at 25% 80%, rgba(255, 208, 0, 0.9) 0%, rgba(255, 208, 0, 0.1) 40%);
+	background-color: #1a1a1a;
+	background-blend-mode: overlay;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	align-items: left;
+	padding: 6px;
+}
+
+aside a {
+	max-width: 48px;
+	height: 48px;
+	margin: 14px;
+}
+
+aside a img {
+	width: 48px;
+	height: 48px;
+	margin: 0;
+}
+
+aside h2 {
+	margin: 0 14px;
+	font-size: 2rem;
+}
+
+aside button {
+	margin-top: auto;
+	display: flex;
+	align-items: center;
+	min-height: 50px;
+	padding: 0 10px;
+	border: none;
+	border-radius: 6px;
+	background: #121212;
+	color: #fff;
+	cursor: pointer;
+}
+
+aside button .pfp {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 60%;
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+	background: #2c2c2c;
+	font-size: 1.3em;
+}
+
+aside button span {
+	margin-left: 16px;
+	font-size: 15px;
+}
+
+/* Main */
+main {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 20px;
+	background: #121212;
+	color: #fff;
+}
+
+main h1 {
+	margin: 5vh 0 0 3vw;
+	font-size: 3em;
+}
+
+main .actions {
+	height: 36px;
+	margin-left: 3vw;
+}
+
+main .actions form {
+	display: flex;
+	align-items: center;
+	margin-right: 10px;
+	border-radius: 9999px;
+	background: #2c2c2c;
+}
+
+/* Shared input reset for search + addColor inputs */
+input[type="search"],
+.addColor form input {
+	background: none;
+	border: none;
+	outline: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	appearance: none;
+	color: #fff;
+	font-size: 1em;
+	height: 100%;
+}
+
+input[type="search"] {
+	margin: 0 12px;
+}
+
+input[type="search"]::placeholder {
+	color: #fff;
+	opacity: .7;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+	-webkit-appearance: none;
+	appearance: none;
+	display: none;
+}
+
+main .actions form img {
+	margin-left: 15px;
+	max-height: 60%;
+}
+
+main .actions > a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	aspect-ratio: 1 / 1;
+	border-radius: 9999px;
+	background: #2c2c2c;
+	color: #fff;
+	font-size: 1.5em;
+}
+
+main .actions > a:hover {
+	background: #3d3d3d;
+}
+
+/* Add Color */
+.addColor {
+	display: flex;
+	flex-direction: column;
+	height: auto;
+}
+
+.addColor span {
+	margin: 0 0 10px 16px;
+	font-size: 19px;
+}
+
+.addColor form {
+	display: flex;
+	align-items: center;
+	height: 36px;
+	gap: 0;
+}
+
+.addColor form input {
+	margin-right: 10px;
+	border-radius: 5px;
+	background: #2c2c2c;
+	text-align: center;
+}
+
+.addColor form input[name="r"],
+.addColor form input[name="g"],
+.addColor form input[name="b"] {
+	width: 50px;
+}
+
+.addColor form input[name="r"],
+.addColor form input[name="g"] {
+	margin-right: 5px;
+}
+
+.addColor form input[name="name"] {
+	text-align: left;
+	padding-left: 16px;
+}
+
+input[name="hex"] {
+	width: 90px;
+}
+
+#preview {
+	width: 36px;
+	height: 36px;
+	margin-right: 10px;
+	border-radius: 5px;
+	background: #fff;
+}
+
+.addColor form button {
+	width: 36px;
+	height: 36px;
+	padding: 0 12px;
+	border: none;
+	border-radius: 9999px;
+	background: #2c2c2c;
+	color: #fff;
+	font-size: 1em;
+	font-weight: bold;
+	text-align: center;
+}
+
+/* Table */
+table {
+	width: 90%;
+	border-collapse: collapse;
+}
+
+th, td {
+	width: 25%;
+	padding: 8px 16px;
+	text-align: left;
+}
+
+th {
+	background: #2c2c2c;
+}
+
+/* Profile popup */
+.profilePopup {
+	position: fixed;
+	z-index: 9999;
+	display: none;
+	flex-direction: column;
+	min-width: 200px;
+	padding: 4px;
+	border-radius: 8px;
+	background: #313131;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    height: fit-content;
+}
+
+.profilePopup span {
+	padding: 10px;
+	font-size: 14px;
+	color: #fff;
+	background: none;
+}
+
+.profilePopup button {
+	padding: 10px;
+	border: none;
+	border-radius: 6px;
+	background: none;
+	color: rgb(255, 117, 117);
+	cursor: pointer;
+	font-size: 14px;
+	text-align: left;
+}
+
+.profilePopup button:hover {
+	background: #444;
+}

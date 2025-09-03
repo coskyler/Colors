@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../cookie.php';
 
 if(checkAuthCookie() !== null) {
-    header("Location: /MyColors.php");
+    header("Location: /LAMPAPIS/SearchColors.php");
     exit;
 }
 

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/MyColors.css">
+    <script defer src="/js/MyColors.js"></script>
+	<title>My Colors</title>
+</head>
+<body>
+	<div>
+		<aside>
+			<a href="/"><img src="/images/logo.png" alt="Logo"></a>
+			<h2>Colors</h2>
+			<button>
+				<div class="pfp">N</div>
+				<span>Nameo</span>
+			</button>
+		</aside>
+
+		<main>
+			<h1>My Colors</h1>
+			<div class="actions">
+                <form method="GET" action="/search">
+                    <img src="/images/searchimg.png" alt="Search">
+                    <input type="search" name="q" placeholder="search colors">
+                </form>
+                <a href="/new-color">+</a>
+            </div>
+            <div class="addColor">
+                <span>New Color</span>
+                <form method="POST" action="/add-color">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="text" name="r" placeholder="R" required>
+                    <input type="text" name="g" placeholder="G" required>
+                    <input type="text" name="b" placeholder="B" required>
+                    <input type="text" name="hex" placeholder="Hex">
+                    <div id="preview"></div>
+                    <button type="submit">✓</button>
+                </form>
+            </div>
+			<table>
+				<thead>
+					<tr>
+						<th>Color</th>
+						<th>Name</th>
+						<th>Hex</th>
+						<th>RGB</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</main>
+	</div>
+
+    <div class="profilePopup" style="display: none;">
+        <span>Full Name</span>
+        <button>Log out</button>
+    </div>
+</body>
+</html>

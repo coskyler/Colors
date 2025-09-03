@@ -12,7 +12,7 @@
 			<a href="/"><img src="/images/logo.png" alt="Colors logo"></a>
 		</div>
 		<nav class="nav">
-			<a href="/">My Colors</a>
+			<a href="/LAMPAPIS/SearchColors.php">My Colors</a>
 		</nav>
 	</header>
 
