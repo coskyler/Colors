@@ -40,14 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         $pdo = db();
 
-        // Check if username exists
-        $stmt = $pdo->prepare("SELECT id FROM Users WHERE username = ?");
-        $stmt->execute([$user]);
-        if ($stmt->fetch()) {
-            echo "Username already exists";
-            exit;
-        }
-
         // Insert new user
         $hash = password_hash($pass, PASSWORD_DEFAULT);
         $stmt = $pdo->prepare(
@@ -61,10 +53,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         echo "OK";
 
+    } catch (PDOException $e) {
+        $sqlstate   = $e->getCode();
+        $driverCode = $e->errorInfo[1] ?? null;
+
+        if($sqlstate === '23000' && $driverCode === 1062) {
+            echo "Username already exists";
+            exit;
+        } else {
+            error_log($e->getMessage());
+            http_response_code(500);
+            echo "Database error";
+        }
     } catch (Throwable $e) {
         error_log($e->getMessage());
         http_response_code(500);
-        echo $e->getMessage();
+        echo "Server error";
     }
 }
 ?>
