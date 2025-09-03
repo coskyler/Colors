@@ -60,6 +60,10 @@ aside button {
 	cursor: pointer;
 }
 
+aside button:hover {
+    background:#1a1a1a;
+}
+
 aside button .pfp {
 	display: flex;
 	justify-content: center;
