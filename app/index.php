@@ -16,6 +16,9 @@ switch ($uri) {
 	case 'colors':
         require ROOT . '/LAMPAPIS/SearchColors.php';
         break;
+	case 'demo':
+		header("Location: https://drive.google.com/file/d/1qDgd2E41RBCU5JQGQyozd-8VdvKBpV79/view");
+		exit;
     default:
         http_response_code(404);
         echo "Page not found";
