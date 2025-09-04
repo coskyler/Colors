@@ -16,15 +16,15 @@ if($userId === null) {
     exit;
 }
 
-$colorName  = trim($_POST['colorName'] ?? '');
-$red        = trim($_POST['r'] ?? '');
-$green      = trim($_POST['g'] ?? '');
-$blue       = trim($_POST['b'] ?? '');
+$colorName  = trim($_POST['name'] ?? '');
+$red   = trim($_POST['r'] ?? '') ?: '0';
+$green = trim($_POST['g'] ?? '') ?: '0';
+$blue  = trim($_POST['b'] ?? '') ?: '0';
 
 // validate name
-if ($colorName === '' || strlen($colorName) > 63) {
+if ($colorName === '' || strlen($colorName) > 50) {
     http_response_code(400);
-    echo "Invalid color name";
+    echo "Name cannot be more than 50 characters";
     exit;
 }
 
@@ -57,5 +57,7 @@ try {
     echo "Database error";
     exit;
 }
+
+echo "OK";
 
 ?>

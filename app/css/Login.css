@@ -140,8 +140,6 @@ button:active {
 	font-size: 0.95rem;
 	color: #cccccc;
 	text-align: center;
-	text-decoration: none;
-	transition: color 0.2s ease, text-decoration 0.2s ease;
 }
 
 .noacc:hover {
@@ -154,7 +152,5 @@ button:active {
 	font-size: 0.95rem;
 	color: #ff5757;
 	text-align: center;
-	text-decoration: none;
-	transition: color 0.2s ease, text-decoration 0.2s ease;
     min-height: 1.2em;
 }

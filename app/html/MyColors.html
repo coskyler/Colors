@@ -24,18 +24,19 @@
                     <img src="/images/searchimg.png" alt="Search">
                     <input type="search" name="q" placeholder="search colors">
                 </form>
-                <a href="/new-color">+</a>
+                <button id="addColorDropdown">+</button>
             </div>
             <div class="addColor">
                 <span>New Color</span>
-                <form method="POST" action="/add-color">
-                    <input type="text" name="name" placeholder="Name" required>
-                    <input type="text" name="r" placeholder="R" required>
-                    <input type="text" name="g" placeholder="G" required>
-                    <input type="text" name="b" placeholder="B" required>
-                    <input type="text" name="hex" placeholder="Hex">
+                <form method="POST" action="/LAMPAPIS/AddColor.php" id="addColorForm">
+                    <input type="text" name="name" id="newColorName" placeholder="Name" required>
+                    <input type="number" id="r" name="r" placeholder="R" min="0" max="255">
+                    <input type="number" id="g" name="g" placeholder="G" min="0" max="255">
+                    <input type="number" id="b" name="b" placeholder="B" min="0" max="255">
+                    <input type="text" id="hex" placeholder="Hex">
                     <div id="preview"></div>
                     <button type="submit">✓</button>
+                    <span id="addColorError"></span>
                 </form>
             </div>
 			<table>
