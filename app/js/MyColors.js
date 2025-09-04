@@ -12,12 +12,18 @@ const addColorError = document.getElementById("addColorError");
 const addColorDropdown = document.getElementById("addColorDropdown");
 const addColorDiv = document.querySelector(".addColor");
 const newColorName = document.getElementById("newColorName");
+const searchForm = document.getElementById("searchForm");
+const tableBody = document.getElementById("tableBody");
 
 if(window.userData) {
     profileName.textContent = window.userData.first_name + " " + window.userData.last_name;
     profileUsername.textContent = window.userData.username;
     pfp.textContent = window.userData.first_name[0].toUpperCase();
 }
+
+const fd = new FormData();
+fd.append("search", "");
+loadTable(fd);
 
 profileButton.addEventListener("click", e => {
     const close = ev => {
@@ -127,6 +133,7 @@ addColorForm.addEventListener("submit", async (e) => {
         newColorName.value = "";
         updatePreviewRgb();
         hexe.value = "";
+        loadTable(fd);
     } else {
         addColorError.textContent = text;
     }
@@ -137,4 +144,53 @@ addColorDropdown.addEventListener("click", e => {
         addColorDiv.style.display = "flex";
     else
         addColorDiv.style.display = "none";
+});
+
+async function loadTable(formData) {
+    const res = await fetch(searchForm.action, {
+        method: "POST",
+        body: formData
+    });
+
+    const rows = await res.json();
+
+    tableBody.innerHTML = "";
+
+    rows.forEach(row => {
+        const tr = document.createElement("tr");
+
+        const previewCell = document.createElement("td");
+        const colorDisplay = document.createElement("div");
+        colorDisplay.className = "tdPreview";
+        previewCell.appendChild(colorDisplay);
+
+        const nameCell = document.createElement("td");
+        nameCell.textContent = row.name;
+
+        const hexCell = document.createElement("td");
+        const r = row.r;
+        const g = row.g;
+        const b = row.b;
+        colorDisplay.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        const toHex = n => n.toString(16).padStart(2, "0");
+        let hex = `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+        hexCell.textContent = hex;
+
+        const rgbCell = document.createElement("td");
+        rgbCell.textContent = r + ", " + g + ", " + b;
+
+        tr.appendChild(previewCell);
+        tr.appendChild(nameCell);
+        tr.appendChild(hexCell);
+        tr.appendChild(rgbCell);
+
+        tableBody.appendChild(tr);
+    });
+}
+
+searchForm.addEventListener("submit", async (e) => {
+    e.preventDefault(); // stop default page reload
+    const formData = new FormData(searchForm);
+
+    loadTable(formData);
 });

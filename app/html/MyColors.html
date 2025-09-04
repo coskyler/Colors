@@ -20,9 +20,9 @@
 		<main>
 			<h1>My Colors</h1>
 			<div class="actions">
-                <form method="GET" action="/search">
-                    <img src="/images/searchimg.png" alt="Search">
-                    <input type="search" name="q" placeholder="search colors">
+                <form method="GET" id="searchForm" action="/LAMPAPIS/SearchColors.php">
+                    <input type="image" id="searchBtn" src="/images/searchimg.png" alt="Search" />
+                    <input type="search" name="search" placeholder="search colors">
                 </form>
                 <button id="addColorDropdown">+</button>
             </div>
@@ -39,18 +39,19 @@
                     <span id="addColorError"></span>
                 </form>
             </div>
-			<table>
-				<thead>
-					<tr>
-						<th>Color</th>
-						<th>Name</th>
-						<th>Hex</th>
-						<th>RGB</th>
-					</tr>
-				</thead>
-				<tbody>
-				</tbody>
-			</table>
+            <div class="tableWrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Color</th>
+                            <th>Name</th>
+                            <th>Hex</th>
+                            <th>RGB</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
 		</main>
 	</div>
 

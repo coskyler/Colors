@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     try {
         $pdo = db();
-        $stmt = $pdo->prepare("SELECT name, r, g, b FROM Colors WHERE user_id = ? AND name LIKE ? ORDER BY id ASC LIMIT 50");
+        $stmt = $pdo->prepare("SELECT name, r, g, b FROM Colors WHERE user_id = ? AND name LIKE ? ORDER BY id DESC LIMIT 50");
         $stmt->execute([$userId, $search . '%']);
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
