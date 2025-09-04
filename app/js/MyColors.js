@@ -1,5 +1,14 @@
 const popup = document.querySelector(".profilePopup");
-const profileButton = document.querySelector("aside button")
+const profileButton = document.querySelector("aside button");
+const profileName = document.querySelector("#name");
+const profileUsername = document.querySelector("#username");
+const pfp = document.querySelector(".pfp");
+
+if(window.userData) {
+    profileName.textContent = window.userData.first_name + " " + window.userData.last_name;
+    profileUsername.textContent = window.userData.username;
+    pfp.textContent = window.userData.first_name[0].toUpperCase();
+}
 
 profileButton.addEventListener("click", e => {
     const close = ev => {
@@ -30,3 +39,4 @@ profileButton.addEventListener("click", e => {
         popup.style.display = "none";
     }
 })
+

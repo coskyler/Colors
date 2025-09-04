@@ -72,7 +72,7 @@ aside button .pfp {
 	aspect-ratio: 1 / 1;
 	border-radius: 50%;
 	background: #2c2c2c;
-	font-size: 1.3em;
+	font-size: 1.15em;
 }
 
 aside button span {
@@ -107,6 +107,7 @@ main .actions form {
 	margin-right: 10px;
 	border-radius: 9999px;
 	background: #2c2c2c;
+    height: 100%;
 }
 
 /* Shared input reset for search + addColor inputs */
@@ -167,8 +168,8 @@ main .actions > a:hover {
 }
 
 .addColor span {
-	margin: 0 0 10px 16px;
-	font-size: 19px;
+	margin: 5px 0 10px 16px;
+    font-weight: bold;
 }
 
 .addColor form {
@@ -176,6 +177,7 @@ main .actions > a:hover {
 	align-items: center;
 	height: 36px;
 	gap: 0;
+    margin: 0;
 }
 
 .addColor form input {
@@ -240,6 +242,8 @@ th, td {
 
 th {
 	background: #2c2c2c;
+    font-weight: bold;
+    color: white;
 }
 
 /* Profile popup */
