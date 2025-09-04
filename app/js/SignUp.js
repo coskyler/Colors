@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		if (text === "OK") {
 			errorEl.textContent = ""; // clear errors
-			window.location.href = "/LAMPAPIS/SearchColors.php";
+			window.location.href = "/colors";
 		} else {
 			errorEl.textContent = text; // show error from PHP
 		}

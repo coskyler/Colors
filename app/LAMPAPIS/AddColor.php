@@ -6,13 +6,13 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-require_once('../db.php');
+require_once $_SERVER['DOCUMENT_ROOT'] . '/db.php';
 require_once __DIR__ . '/../cookie.php';
 
 $userId = checkAuthCookie();
 
 if($userId === null) {
-    header("Location: /LAMPAPIS/Login.php");
+    header("Location: /login");
     exit;
 }
 

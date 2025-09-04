@@ -1,9 +1,9 @@
 <?php
-require_once('../db.php');
+require_once $_SERVER['DOCUMENT_ROOT'] . '/db.php';
 require_once __DIR__ . '/../cookie.php';
 
 if(checkAuthCookie() !== null) {
-    header("Location: /LAMPAPIS/SearchColors.php");
+    header("Location: /colors");
     exit;
 }
 

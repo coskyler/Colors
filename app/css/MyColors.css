@@ -15,13 +15,13 @@ div {
 aside {
 	width: 215px;
 	background-image:
-		radial-gradient(circle at 10% 20%, rgba(255, 60, 60, 0.9) 0%, rgba(255, 60, 60, 0.1) 40%),
+		radial-gradient(circle at 0% 30%, rgba(255, 60, 60, 0.9) 0%, rgba(255, 60, 60, 0.1) 40%),
 		radial-gradient(circle at 95% 85%, rgba(80, 170, 255, 0.9) 0%, rgba(80, 170, 255, 0.1) 40%),
-		radial-gradient(circle at 42% 55%, rgba(60, 255, 150, 0.9) 0%, rgba(60, 255, 150, 0.1) 40%),
-		radial-gradient(circle at 50% 10%, rgba(255, 120, 200, 0.9) 0%, rgba(255, 120, 200, 0.1) 40%),
-		radial-gradient(circle at 78% 30%, rgba(190, 80, 255, 0.9) 0%, rgba(190, 80, 255, 0.1) 40%),
-		radial-gradient(circle at 25% 80%, rgba(255, 208, 0, 0.9) 0%, rgba(255, 208, 0, 0.1) 40%);
-	background-color: #1a1a1a;
+		radial-gradient(circle at 0% 50%, rgba(60, 255, 150, 0.9) 0%, rgba(60, 255, 150, 0.1) 40%),
+		radial-gradient(circle at 100% 10%, rgba(255, 120, 200, 0.9) 0%, rgba(255, 120, 200, 0.1) 40%),
+		radial-gradient(circle at 78% 70%, rgba(190, 80, 255, 0.9) 0%, rgba(190, 80, 255, 0.1) 40%),
+		radial-gradient(circle at 10% 90%, rgba(255, 208, 0, 0.9) 0%, rgba(255, 208, 0, 0.1) 40%);
+	background-color: #272727;
 	background-blend-mode: overlay;
 	color: #fff;
 	display: flex;
@@ -305,7 +305,7 @@ th:last-child, td:last-child {
 	min-width: 200px;
 	padding: 4px;
 	border-radius: 8px;
-	background: #313131;
+	background: #242424;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     height: fit-content;
 }
@@ -326,6 +326,7 @@ th:last-child, td:last-child {
 	cursor: pointer;
 	font-size: 14px;
 	text-align: left;
+	text-decoration: none;
 }
 
 .profilePopup a:hover {

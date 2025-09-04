@@ -2,7 +2,7 @@ body, html {
 	margin: 0;
 	padding: 0;
 	font-family: Arial, sans-serif;
-	background: #121212; 
+	background: #121212;
 	color: #fff;
 }
 
@@ -11,7 +11,7 @@ body, html {
 	align-items: center;
 	justify-content: space-between;
 	padding: 15px 10%;
-	background: #1c1c1c;
+	background: #121212;
 }
 .brand img {
 	height: 40px;
@@ -35,11 +35,21 @@ body, html {
 	justify-content: center;
 	text-align: center;
 	padding: 24px;
+
+	background-image:
+	radial-gradient(circle at 10% 20%, rgba(255, 60, 60, 0.9) 0%, rgba(255, 60, 60, 0.1) 40%),
+	radial-gradient(circle at 95% 85%, rgba(80, 170, 255, 0.9) 0%, rgba(80, 170, 255, 0.1) 40%),
+	radial-gradient(circle at 42% 55%, rgba(60, 255, 150, 0.9) 0%, rgba(60, 255, 150, 0.1) 40%),
+	radial-gradient(circle at 50% 10%, rgba(255, 120, 200, 0.9) 0%, rgba(255, 120, 200, 0.1) 40%),
+	radial-gradient(circle at 78% 30%, rgba(190, 80, 255, 0.9) 0%, rgba(190, 80, 255, 0.1) 40%),
+	radial-gradient(circle at 25% 80%, rgba(255, 208, 0, 0.9) 0%, rgba(255, 208, 0, 0.1) 40%);
+	background-color: #272727;
+	background-blend-mode: overlay;
 }
 .hero h1 {
 	margin-top: 25vh;
 	margin-bottom: 0;
-	font-size: clamp(3rem, 10vw, 7rem);
+	font-size: 7rem;
 }
 
 .subtitle {
@@ -70,8 +80,8 @@ body, html {
 }
 
 .github {
-	margin-top: 60px;
-	margin-bottom: 20px;
+	margin-top: 0;
+	margin-bottom: 60px;
 }
 .github a {
 	margin-top: 1.2em;
@@ -88,9 +98,9 @@ body, html {
 }
 
 .about {
-	padding: 10vh 30vw 140px;
+	padding: 10vh 30vw 100px;
 	text-align: left;
-	background: #1e1e1e;
+	background: #121212;
 }
 .about h2 {
 	margin: 0 auto 8px;
@@ -105,7 +115,7 @@ body, html {
 
 .about img {
     display: block;
-    margin: 80px auto 0;
+    margin: 100px auto 0;
 	max-width: 200px;
 }
 
@@ -113,5 +123,5 @@ body, html {
 	text-align: center;
 	padding: 16px 20px;
 	border-top: 1px solid #333;
-	background: #1c1c1c;
+	background: #1a1a1a;
 }

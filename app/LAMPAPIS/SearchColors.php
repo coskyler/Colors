@@ -1,13 +1,13 @@
 <?php
 require_once __DIR__ . '/../cookie.php';
-require_once('../db.php');
+require_once $_SERVER['DOCUMENT_ROOT'] . '/db.php';
 
 header('Cache-Control: no-store');
 
 $userId = checkAuthCookie();
 
 if($userId === null) {
-    header("Location: /LAMPAPIS/Login.php");
+    header("Location: /login");
     exit;
 }
 
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     }
 
     if(!$row) {
-        header("Location: /LAMPAPIS/Login.php");
+        header("Location: /login");
         exit;
     }
 

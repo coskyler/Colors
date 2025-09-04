@@ -1,5 +1,5 @@
 <?php
-require_once('../db.php');
+require_once $_SERVER['DOCUMENT_ROOT'] . '/db.php';
 require_once __DIR__ . '/../cookie.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
